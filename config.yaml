@@ -1,0 +1,38 @@
+base_dir: 'E:/HWs/icelanddata'
+model_dir: 'E:/HWs/github/models'
+output_dir: 'E:/HWs/github/results'
+
+# Separate month lists for training and projection
+training_months: ['March', 'April', 'May', 'June', 'July', 'August', 'September', 'October']
+projection_months: ['March', 'April', 'May', 'June', 'July', 'August', 'September']
+
+years: ['2018', '2019', '2020', '2021']
+projection_year: 2022
+l1_reg: 0.001
+monthly_name_pattern: 'model_{month}_{year}_l1.h5'
+csv_file_name: 'auc_values_training_l1.csv'
+final_model_name: 'Dense_model_l1.h5'
+perm_csv_file_name: 'permutation_scores.csv'
+
+# Model configuration section
+model_config:
+  dense_layers:
+    - units: 16
+      activation: relu
+      kernel_regularizer: l1
+      regularization_strength: 0.001
+    - units: 32
+      activation: relu
+      kernel_regularizer: l1
+      regularization_strength: 0.001
+    - units: 64
+      activation: relu
+      kernel_regularizer: l1
+      regularization_strength: 0.001
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+  metrics:
+    - accuracy
+  epochs: 500
+  batch_size: 32
+  early_stopping_patience: 5

@@ -1,7 +1,7 @@
 # Deep Learning Project for Species Distribution Modeling (SDM)
 
 ## Overview
-This project trains deep learning models to predict species distribution based on environmental data. It includes scripts for training, evaluation, permutation importance analysis, and projecting models onto future data.
+This project trains deep learning models to predict species distribution based on environmental data. It includes scripts for training, evaluation, permutation importance analysis, and projecting models onto future data.  The environmental data may be downloaded, using the source provided in the main publication.
 
 ## Directory Structure
 - `config.yaml`: Configuration file containing paths and parameters.

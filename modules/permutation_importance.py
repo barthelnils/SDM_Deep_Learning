@@ -3,6 +3,21 @@ from sklearn.metrics import roc_auc_score
 from modules.data_prep import load_data 
 
 def calculate_permutation_importance(model, mean, std, base_dir, month, year):
+    """
+    Calculate permutation importance of features for a given model.
+
+    Parameters:
+    model (keras.Model): The trained Keras model for which to calculate feature importance.
+    mean (numpy array): Mean values used for normalizing the input data.
+    std (numpy array): Standard deviation values used for normalizing the input data.
+    base_dir (str): The base directory where the environmental data is stored.
+    month (int): The month for which to calculate feature importance.
+    year (int): The year for which to calculate feature importance.
+
+    Returns:
+    percent_contributions (numpy array): Array of percentage contributions of each feature to the model's performance.
+    """
+    
     feature_names = ['Bedrock', 'Distance', 'Slope', 'Meanchla', 'Meansst', 'Salinity']
 
     num_iterations = 50

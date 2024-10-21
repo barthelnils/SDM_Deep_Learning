@@ -3,13 +3,10 @@ import yaml
 import pandas as pd
 import numpy as np
 from modules.data_prep import load_data
-from modules.model_training import train_model, save_model
-from modules.evaluation import save_auc_values
+from modules.model_training import train_model, save_model, save_auc_values
 from modules.sdm_creation import create_sdm
 from modules.permutation_importance import calculate_permutation_importance
 from modules.projection import project_model
-
-
 
 def main():
     # Load configuration

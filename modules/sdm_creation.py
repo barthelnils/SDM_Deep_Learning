@@ -4,6 +4,18 @@ import numpy as np
 from tensorflow import keras
 
 def create_sdm(base_dir, model_dir, output_dir, year, month, global_mean, global_std):
+    """
+    Create a Species Distribution Model (SDM) for a specified month and year.
+    
+    Parameters:
+    base_dir (str): Directory containing environmental data.
+    model_dir (str): Directory containing the saved model.
+    output_dir (str): Directory to save the output SDM.
+    year (int): The year for which to create the SDM.
+    month (str): The month for which to create the SDM.
+    global_mean (float): Global mean for normalizing the environmental data.
+    global_std (float): Global standard deviation for normalizing the environmental data.
+    """
     # Load saved model
     model_path = os.path.join(model_dir, f'model_{month}_{year}_l1.h5')
     model = keras.models.load_model(model_path)

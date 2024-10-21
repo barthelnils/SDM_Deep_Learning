@@ -6,6 +6,13 @@ from sklearn.preprocessing import MinMaxScaler
 import yaml
 
 def project_model(config, year):
+    """
+    Project the model on environmental data for a specific year.
+    
+    Parameters:
+    config (dict): Configuration dictionary containing model and data paths.
+    year (int): The year for which to project the model.
+    """
     model_path = os.path.join(config['model_dir'], config['final_model_name'])
     model = keras.models.load_model(model_path)
 

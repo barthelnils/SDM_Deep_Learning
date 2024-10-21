@@ -6,7 +6,17 @@ import pandas as pd
 def load_data(base_dir, year, month):
     """
     Load environmental rasters and occurrence points for a specific month and year.
+
+    Parameters:
+    base_dir (str): The base directory where the raster and CSV files are located.
+    year (int): The year for which data is to be loaded.
+    month (int): The month for which data is to be loaded.
+
+    Returns:
+    env_data (numpy array): Array of environmental data points for the occurrence locations.
+    labels (numpy array): Array of labels corresponding to each occurrence point (species).
     """
+    
     # Load environmental rasters
     bedrock = rasterio.open(f'{base_dir}/{year}/{month}/bedrock.tif')
     distance = rasterio.open(f'{base_dir}/{year}/{month}/distance.tif')

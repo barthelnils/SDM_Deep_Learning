@@ -1,6 +1,6 @@
-base_dir: 'E:/HWs/icelanddata'
-model_dir: 'E:/HWs/github/models'
-output_dir: 'E:/HWs/github/results'
+base_dir: './data'
+model_dir: './models'
+output_dir: './results'
 
 # Separate month lists for training and projection
 training_months: ['March', 'April', 'May', 'June', 'July', 'August', 'September', 'October']
